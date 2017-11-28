@@ -4,7 +4,7 @@
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>GRIM</title>
-    <link>http://grim.com/</link>
+    <link>http://wtgrim.github.io/</link>
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Wasn&#39;t looking for someone until you.</description>
@@ -13,8 +13,8 @@
     
     <item>
       <title>god</title>
-      <link>http://grim.com/2017/11/25/god/</link>
-      <guid>http://grim.com/2017/11/25/god/</guid>
+      <link>http://wtgrim.github.io/2017/11/25/god/</link>
+      <guid>http://wtgrim.github.io/2017/11/25/god/</guid>
       <pubDate>Sat, 25 Nov 2017 13:56:47 GMT</pubDate>
       <description>
       
@@ -28,13 +28,13 @@
       
       <content:encoded><![CDATA[<p>哦是 是是是是</p>]]></content:encoded>
       
-      <comments>http://grim.com/2017/11/25/god/#disqus_thread</comments>
+      <comments>http://wtgrim.github.io/2017/11/25/god/#disqus_thread</comments>
     </item>
     
     <item>
       <title>first</title>
-      <link>http://grim.com/2017/11/24/hello-blog/</link>
-      <guid>http://grim.com/2017/11/24/hello-blog/</guid>
+      <link>http://wtgrim.github.io/2017/11/24/hello-blog/</link>
+      <guid>http://wtgrim.github.io/2017/11/24/hello-blog/</guid>
       <pubDate>Fri, 24 Nov 2017 12:45:13 GMT</pubDate>
       <description>
       
@@ -48,13 +48,13 @@
       
       <content:encoded><![CDATA[<pre><code>欢迎来到我的个人博客。</code></pre>]]></content:encoded>
       
-      <comments>http://grim.com/2017/11/24/hello-blog/#disqus_thread</comments>
+      <comments>http://wtgrim.github.io/2017/11/24/hello-blog/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Try</title>
-      <link>http://grim.com/2017/11/24/try/</link>
-      <guid>http://grim.com/2017/11/24/try/</guid>
+      <link>http://wtgrim.github.io/2017/11/24/try/</link>
+      <guid>http://wtgrim.github.io/2017/11/24/try/</guid>
       <pubDate>Fri, 24 Nov 2017 12:45:13 GMT</pubDate>
       <description>
       
@@ -68,13 +68,13 @@
       
       <content:encoded><![CDATA[<p> 我真的不信</p>]]></content:encoded>
       
-      <comments>http://grim.com/2017/11/24/try/#disqus_thread</comments>
+      <comments>http://wtgrim.github.io/2017/11/24/try/#disqus_thread</comments>
     </item>
     
     <item>
       <title>Hello World</title>
-      <link>http://grim.com/2017/11/24/hello-world/</link>
-      <guid>http://grim.com/2017/11/24/hello-world/</guid>
+      <link>http://wtgrim.github.io/2017/11/24/hello-world/</link>
+      <guid>http://wtgrim.github.io/2017/11/24/hello-world/</guid>
       <pubDate>Fri, 24 Nov 2017 03:30:35 GMT</pubDate>
       <description>
       
@@ -87,7 +87,7 @@
       
       <content:encoded><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content:encoded>
       
-      <comments>http://grim.com/2017/11/24/hello-world/#disqus_thread</comments>
+      <comments>http://wtgrim.github.io/2017/11/24/hello-world/#disqus_thread</comments>
     </item>
     
   </channel>
