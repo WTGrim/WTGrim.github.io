@@ -4,15 +4,16 @@
 
 # Site
 title: GRIM
+avatar: /images/blogAvatar.png
 subtitle: YaoaYaoa
 description: Wasn't looking for someone until you.
 author: GRIM
-language: zh-CN
-timezone: Asia/Chengdu
+language: zh-Hans
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://grim.com/
+url: http://wtgrim.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -80,3 +81,11 @@ deploy:
   type: git
   repo: https://github.com/WTGrim/WTGrim.github.io.git
   branch: master
+
+#设置RSS
+feed:
+  type: rss2
+  path: rss2.xml
+  limit: 5
+  hub:
+  content: 'true'
