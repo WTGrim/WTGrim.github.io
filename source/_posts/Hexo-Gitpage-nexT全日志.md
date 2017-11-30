@@ -1,0 +1,454 @@
+---
+title: Hexo+Gitpage+NexT全日志
+date: 2017-01-29 14:02:52
+tags: archivies
+comments: true
+---
+
+
+
+## 写在前面
+
+一直在想搭一个自己的Blog，但是就这样拖到了现在，我能说一句是没(tai)时(lan)间(la)吗？断断续续掰呲这个博客有一小段时间了，想起来就弄一下子，今天差不多算是能看了，后面还会加上一些功能。做这个博客算是一个我个人的秘密基地吧，如果有人偶然闯进来的话，也希望我的一些日志对你有些许的帮助。
+
+
+
+现在对我做这个博客过程做一些记录，如果对正想搭建自己博客的人有一些帮助的话，那么希望有幸能帮助到你。
+
+现在很多个人博客网站采用Hexo + Gitpage + NexT 或者 Jekyll搭建静态网页，然后部署到自己的域名网站上，还有的采用WordPress。我个人比较喜欢现在博客简洁的风格，所以我的博客是采用Hexo来搭建的。
+
+
+
+## 关于Hexo部分
+
+
+
+![Hexo图片来源于网络](Hexo-Gitpage-nexT全日志/Hexo图片来源于网络.png)
+
+对于工具环境，我用的MacBook Pro，但是命令行的差别不大，所以使用Windows来搭建也不必担心。
+
+
+
+### 注册Github账号
+
+我们需要先将博客部署到GitHub上，所以需要一个GitHub账号，如果已经有请忽略，没有的话去[GitHub官网](https://github.com/)注册一个即可。
+
+Github账号解决后，创建一个仓库。
+
+
+
+![创建仓库](Hexo-Gitpage-nexT全日志/创建仓库.png)
+
+
+
+### 填写仓库名称
+
+![图片来自GitHub](Hexo-Gitpage-nexT全日志/图片来自GitHub.png)
+
+填写规则：
+
+```
+Github昵称.github.io
+```
+
+然后点击创建即可。
+
+
+
+### 生成秘钥
+
+在终端中输入：
+
+```
+ssh-keygen -t rsa -C "Github的注册邮箱地址"
+```
+
+然后一路`Enter`就好，待秘钥生成完毕，会得到两个文件**id_rsa**和**id_rsa.pub**。用带格式的记事本或者编辑器打开id_rsa.pub，Ctrl + a复制里面的所有内容，然后进入<https://github.com/settings/ssh>：
+
+![添加秘钥](Hexo-Gitpage-nexT全日志/添加秘钥.png)
+
+将复制的内容粘贴到Key的输入框，Title里面的内容可随意填写，点击`Add SSH key`按钮即可。
+
+
+
+## 安装node.js
+
+这里推荐Homebrew来安装node.js。
+
+
+
+### Homebrew
+
+[Homebrew](http://brew.sh/), Mac系统的包管理器，用于安装NodeJS和一些其他必需的工具软件。
+
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+译注：在Max OS X 10.11（El Capitan)版本中，homebrew在安装软件时可能会碰到`/usr/local`目录不可写的权限问题。可以使用下面的命令修复：
+
+```
+sudo chown -R `whoami` /usr/local
+```
+
+### Node
+
+使用Homebrew来安装[Node.js](https://nodejs.org/).
+
+```
+brew install node
+```
+
+安装完node后建议设置npm镜像以加速后面的过程（或使用科学上网工具）。注意：不要使用cnpm！cnpm安装的模块路径比较奇怪，packager不能正常识别！
+
+```
+npm config set registry https://registry.npm.taobao.org --global
+npm config set disturl https://npm.taobao.org/dist --global
+```
+
+### 安装git
+
+```objective-c
+npm install hexo-deployer-git --save
+```
+
+
+
+## 安装Hexo
+
+在你电脑上方便放置Blog文件夹的地方，创建一个Blog文件夹(名字你随意啦，最好英文吧，职业病)。
+
+然后在终端中
+
+```
+$ cd 到你创建的blog文件夹(可以将文件夹拖到此处就会自动生成路径)
+```
+
+下载安装hexo执行命令
+
+```
+$ npm install -g hexo-cli
+```
+
+
+
+### 初始化博客
+
+在当前路径下直接输入
+
+```
+$ hexo init 
+// node.js的命令，根据博客既定的dependencies配置安装所有的依赖包
+$ npm install
+```
+
+执行完命令后，可以在创建的blog文件夹下看到如下文件
+
+![博客文件夹](Hexo-Gitpage-nexT全日志/博客文件夹.png)
+
+
+
+### 配置Hexo
+
+在上面的文件夹下可以看到一个_config.yml的文件，它就是站点配置文件，用编辑器(如果有Xcode推荐Xcode)打开，如下
+
+```
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: # The title of your website
+subtitle: # The subtitle of your website
+description: # The description of your website
+author: # Your name
+language: # The language of your website
+timezone: 
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://yoursite.com/child
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: landscape
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: 
+```
+
+
+
+不要看着这么多，其实用我们配置的地方比较少。（**所有输入的配置，需要在冒号后面留一个空格，切记**）
+
+```
+title: GRIM
+subtitle: just do it
+description: Wasn't looking for someone until you.
+author: GRIM
+language: zh-Hans
+timezone: Asia/Shanghai
+avatar: /images/blogAvatar.png
+```
+
+关于头像avatar，有两种方式，一种是网络图片，在后面放置头像的URL即可，另外一种是本地图片，将图片放置到next主题文件夹themes/next/source/images，然后如上图输入绝对路径即可，关于next主题现在我们还没到那一步，后面我们会讲到，所以现在放置网络图片的URL即可。
+
+
+
+### 配置个人域名
+
+```
+url: https://github昵称.github.io
+```
+
+ps:如果后面购买了域名网站，将这里改为你的个人域名网站即可。
+
+对于root（根目录）、permalink（永久链接）、permalink_defaults（默认永久链接）等其他信息保持默认。
+
+
+
+### 配置部署deploy
+
+```
+  type: git
+  repo: https://github.com/WTGrim/WTGrim.github.io.git
+  branch: master
+```
+
+其中repo，是放置Blog的仓库地址，如下可得复制到这里即可。
+
+![复制仓库git地址](Hexo-Gitpage-nexT全日志/复制仓库git地址.png)
+
+
+
+### 发表文章
+
+```
+hexo new "文章标题"
+```
+
+然后可以在本地博客文件夹`source`/`_post`文件夹下看到新建的markdown文件。
+
+用支持markdown语法的编辑器编辑这边文章
+
+![编辑文章](Hexo-Gitpage-nexT全日志/编辑文章.png)
+
+
+
+编辑保存后，接下来进行本地发布，终端进到博客文件，执行命令
+
+```
+$ hexo server
+```
+
+完成后可以看到提示在http://localhost:4000/ 打开浏览，打开浏览器输入网址即可看到效果，这里我就不截图了（因为懒），大致是一个发光的地球哇，上面有你的昵称。
+
+
+
+这个时候，这个页面只能在本机能看到，怎么让别人也能访问我们的博客呢？
+
+那么我们需要将博客部署到Github上，只需要在当前目录下，终端中执行命令
+
+```
+$ hexo generate
+$ hexo deploy
+```
+
+然后在浏览器中输入
+
+```
+你的昵称.github.io
+```
+
+
+
+## 更换主题
+
+Ps:下班啦 下次更新!
+
+更新！
+
+由于现在的界面可能觉得，嗯界面不太好看，那么就需要更换主题，我们用NexT来更换主题。
+
+### 下载NexT主题
+
+在终端中，cd到博客的根目录下，执行命令：
+
+```
+$ git clone https://github.com/iissnan/hexo-theme-next themes/next
+```
+
+在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml 。其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。
+我们约定，将前者称为 **站点配置文件**，后者称为 **主题配置文件**
+
+### 启用 NexT 主题
+
+打开 **站点配置**文件 ，找到 theme 字段，并将其值更改为 next 。
+NexT 主题安装完成。下一步我们将验证主题是否正确启用，在切换主题之后、验证之前，我们最好使用 `hexo clean` 来清除 Hexo 的缓存。
+
+执行部署命令
+
+```
+$ hexo clean
+$ hexo g
+$ hexo d
+```
+
+在浏览器中输入```你的昵称.github.io```即可观察到muse主题效果
+
+![Muse主题界面](/Users/grim/Documents/Work/Fun/Blog2/source/_posts/Hexo-Gitpage-nexT全日志/Muse主题界面.png)
+
+
+
+当然，也可切换主题，有四种主题可选
+
+![主题类别](Hexo-Gitpage-nexT全日志/主题类别.png)
+
+
+
+## 同步Hexo搭建的博客
+
+这点算是比较重要的，因为初次搭建好Blog，Hexo相关的配置都只存在于你的这台电脑上，如果你换电脑了或者搭建用的公司的电脑，那么回家你在自己的电脑上就拿不到之前已经配置好的Hexo，从而不能继续进行相关的配置。
+
+那么接下来要做的就是将我们已配置好的Hexo同步到之前我们创建的Github的仓库的分支上。
+
+终端中cd到博客的根目录下
+
+```
+// 初始化仓库
+git init
+// 添加仓库地址
+git remote add origin https://github.com/用户名/仓库名.git
+// 新建分支并切换到新建的分支
+git checkout -b 分支名
+// 添加所有本地文件到git
+git add .
+// git提交描述
+git commit -m ""
+// 推送到hexo分支
+git push origin 分支名
+```
+
+这样就讲Hexo相关配置上传到了仓库的分支上，那么在另外一台设备上可以这样做
+
+```
+// 克隆文件到本地
+git clone -b 分支名 https://github.com/用户名/仓库名.git
+```
+
+将Hexo配置下载下来，继续相关的配置或者写文章，完成后也要提交你的配置
+
+```
+// 添加源文件
+git add .
+// git提交
+git commit -m ""
+// 先拉原来Github分支上的源文件到本地，进行合并
+git pull origin 分支名
+// 比较解决前后版本冲突后，push源文件到Github的分支
+git push origin 分支名
+```
+
+这样就实现了自己Blog的Hexo同步。
+
+
+
+## 绑定个人域名
+
+如果觉得现在的```你的昵称.github.io```并不是很炫酷，那么你可以通过购买域名，将自己的Blog部署上去。
+
+可以在阿里云上购买域名[阿里云域名页面](https://wanwang.aliyun.com/?spm=5176.8142029.735711.56.3836dbccCvcics)，较长的域名相对便宜，越到后面，年份越来越久，可能收费会相应的增长。
+
+### 域名解析
+
+购买域名后，我们登录进入阿里云官网的[控制台](https://home.console.aliyun.com/?spm=5176.8142029.388261.21.ZtVm97)，在域名列表中可查看自己购买的域名
+
+点击列表中对应的域名所在列的**解析**，进入解析界面
+
+点击**添加解析**按钮，三个输入格输入：**CNAME**、**@**、**Github博客域名**。选择保存完成个人域名向个人博客的映射。添加解析后，在浏览器输入我们新注册的域名
+
+![域名解析](Hexo-Gitpage-nexT全日志/域名解析.png)
+
+
+
+
+
+可以看到网站报出了**404**错误，这说明域名已经成功映射到了Github网站，但是它找不到博客的位置，所以我们需要实现个人博客向个人域名的映射，进入Github博客的仓库
+
+![域名解析仓库配置](Hexo-Gitpage-nexT全日志/域名解析仓库配置.png)
+
+
+
+
+
+点击上图上方偏右的**Create new file**按钮，创建一个文件：
+
+![域名解析输入域名](Hexo-Gitpage-nexT全日志/域名解析输入域名.png)
+
+
+
+文件名为**CNAME**(注意：没有扩展名)，文件内容为**个人域名**(注意：没有**http://**，没有**www**)，然后选择下方的**Commit new file**按钮。然后在浏览器端重新输入我们的域名，我们可以看到域名绑定成功。
+
+
+
+### 问题
+
+当在本地使用`hexo deploy`命令再一次部署博客时，会发现博客网页的**css样式丢失**或是**404**错误，这是因为本地的博客工程里面还没有CNAME，当我们重新部署后，远程的博客工程会和本地保持同步，将CNAME文件删除，所以需要在本地添加CNAME文件。
+
+这里需要注意的是：CNAME文件添加的目录是在根目录下的source文件夹，而不是.deploy_git文件夹，完成添加后重新部署，博客网站恢复正常。
+
+
+
+## 添加分类、评论、打赏、RSS功能
+
+
+
