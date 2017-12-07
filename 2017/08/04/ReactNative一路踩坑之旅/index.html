@@ -84,15 +84,15 @@
 <meta name="description" content="React Native让开发者使用JavaScript和React编写应用，利用相同的核心代码就可以创建基于Web、iOS和Android平台的原生应用。Facebook在2015.3.26 F8大会上开源了React Native，实现了Web和iOS平台，并且在2015.9.15把JavaScript技术应用到了">
 <meta name="keywords" content="React Native">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React Native一路踩坑之旅">
+<meta property="og:title" content="React Native之旅">
 <meta property="og:url" content="https://wtgrim.github.io/2017/08/04/ReactNative一路踩坑之旅/index.html">
 <meta property="og:site_name" content="GRIM">
 <meta property="og:description" content="React Native让开发者使用JavaScript和React编写应用，利用相同的核心代码就可以创建基于Web、iOS和Android平台的原生应用。Facebook在2015.3.26 F8大会上开源了React Native，实现了Web和iOS平台，并且在2015.9.15把JavaScript技术应用到了Android平台上，自此React Native已经支持当前主流平台。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://wtgrim.github.io/2017/08/04/ReactNative一路踩坑之旅/reactNative发布会.png">
-<meta property="og:updated_time" content="2017-12-07T06:27:49.000Z">
+<meta property="og:updated_time" content="2017-12-07T08:04:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native一路踩坑之旅">
+<meta name="twitter:title" content="React Native之旅">
 <meta name="twitter:description" content="React Native让开发者使用JavaScript和React编写应用，利用相同的核心代码就可以创建基于Web、iOS和Android平台的原生应用。Facebook在2015.3.26 F8大会上开源了React Native，实现了Web和iOS平台，并且在2015.9.15把JavaScript技术应用到了Android平台上，自此React Native已经支持当前主流平台。">
 <meta name="twitter:image" content="https://wtgrim.github.io/2017/08/04/ReactNative一路踩坑之旅/reactNative发布会.png">
 
@@ -133,7 +133,7 @@
 <!-- 网页加载条 -->
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <title>React Native一路踩坑之旅 | GRIM</title>
+  <title>React Native之旅 | GRIM</title>
   
 
 
@@ -307,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">React Native一路踩坑之旅</h1>
+          <h1 class="post-title" itemprop="name headline">React Native之旅</h1>
         
 
         <div class="post-meta">
@@ -359,7 +359,7 @@
 
           
           
-             <span id="/2017/08/04/ReactNative一路踩坑之旅/" class="leancloud_visitors" data-flag-title="React Native一路踩坑之旅">
+             <span id="/2017/08/04/ReactNative一路踩坑之旅/" class="leancloud_visitors" data-flag-title="React Native之旅">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -394,8 +394,16 @@
 <p>React Native让开发者使用JavaScript和React编写应用，利用相同的核心代码就可以创建基于Web、iOS和Android平台的原生应用。Facebook在2015.3.26 F8大会上开源了React Native，实现了Web和iOS平台，并且在2015.9.15把JavaScript技术应用到了Android平台上，自此React Native已经支持当前主流平台。</p>
 </blockquote>
 <p><img src="/2017/08/04/ReactNative一路踩坑之旅/reactNative发布会.png" alt="reactNative发布会"></p>
-<h2 id="关于React-Native环境配置"><a href="#关于React-Native环境配置" class="headerlink" title="关于React Native环境配置"></a>关于React Native环境配置</h2><p>在这里，我们就不介绍有关React Native环境配置了，可以去<a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">React Native官网</a>得到相应的帮助，或者国内关于<a href="http://reactnative.cn/docs/0.50/getting-started.html" target="_blank" rel="noopener">React Native中文网</a>查看相关内容，相信这些完全能满足你的需求。</p>
+<h2 id="关于React-Native环境配置"><a href="#关于React-Native环境配置" class="headerlink" title="关于React Native环境配置"></a>关于React Native环境配置</h2><p>在这里，我们就不介绍有关React Native环境配置了，可以去<a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">React Native官网</a>得到相应的帮助，或者国内关于<a href="http://reactnative.cn/docs/0.50/getting-started.html" target="_blank" rel="noopener">React Native中文网</a>查看相关内容，有MacOS、Linux、Windows对应iOS和Android平台的相关配置，相信这些完全能满足你的需求。</p>
 <a id="more"></a>
+<p>PS：<em>init命令默认会创建最新的版本，而目前最新的0.45及以上版本需要下载boost库编译。此库体积庞大，在国内即便翻墙也很难下载成功，导致很多人<strong>无法正常运行iOS项目</strong>，中文网在论坛中提供了这些库的<a href="http://bbs.reactnative.cn/topic/4301/" target="_blank" rel="noopener">国内下载链接</a>。如果你嫌麻烦，又没有对新版本的需求，那么可以暂时创建<code>0.44.3</code>的版本。</em></p>
+<blockquote>
+<p>提示：你可以使用<code>--version</code>参数（注意是<code>两</code>个杠）创建指定版本的项目。例如<code>react-native init MyApp --version 0.44.3</code>。注意版本号必须精确到两个小数点。</p>
+</blockquote>
+<p>创建个人项目完成后，可以使用命令号工具执行<code>react-native run-ios</code>或者<code>react-native run-androi</code>运行项目，这里就不再赘述了。</p>
+<h2 id="项目实践"><a href="#项目实践" class="headerlink" title="项目实践"></a>项目实践</h2><p>之前在网上看到有人用React Native仿写了美团App首页，在自己的尝试后也写了一个相应的React Native项目。那个小项目算是我初识React Native。惊叹于React Native的”Learn once, Write anywhere”的同时，也发现里面的东西挺多的，需要一定的前端基础，例如JSX语法、CSS-layout、ES6或ES5编程语言、flexbox布局等等。</p>
+<p>现在因为自己未来的一些个人打算，重拾React Native，希望能够在里面更深层次的探索，同时结合node.js后端的知识，重新写一个项目，从而也提高一下自己的技术栈和技术沉淀。</p>
+
       
     </div>
     
@@ -659,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于React-Native环境配置"><span class="nav-number">1.</span> <span class="nav-text">关于React Native环境配置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于React-Native环境配置"><span class="nav-number">1.</span> <span class="nav-text">关于React Native环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目实践"><span class="nav-number">2.</span> <span class="nav-text">项目实践</span></a></li></ol></div>
             
 
           </div>
