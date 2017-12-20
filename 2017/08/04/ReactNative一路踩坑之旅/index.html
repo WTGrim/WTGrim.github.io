@@ -84,15 +84,17 @@
 <meta name="description" content="React Native让开发者使用JavaScript和React编写应用，利用相同的核心代码就可以创建基于Web、iOS和Android平台的原生应用。Facebook在2015.3.26 F8大会上开源了React Native，实现了Web和iOS平台，并且在2015.9.15把JavaScript技术应用到了">
 <meta name="keywords" content="React Native">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React Native之旅">
+<meta property="og:title" content="重拾React Native之旅">
 <meta property="og:url" content="https://wtgrim.github.io/2017/08/04/ReactNative一路踩坑之旅/index.html">
 <meta property="og:site_name" content="GRIM">
 <meta property="og:description" content="React Native让开发者使用JavaScript和React编写应用，利用相同的核心代码就可以创建基于Web、iOS和Android平台的原生应用。Facebook在2015.3.26 F8大会上开源了React Native，实现了Web和iOS平台，并且在2015.9.15把JavaScript技术应用到了Android平台上，自此React Native已经支持当前主流平台。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://wtgrim.github.io/2017/08/04/ReactNative一路踩坑之旅/reactNative发布会.png">
-<meta property="og:updated_time" content="2017-12-07T08:04:48.000Z">
+<meta property="og:image" content="https://wtgrim.github.io/2017/08/04/ReactNative一路踩坑之旅/link报错.png">
+<meta property="og:image" content="https://wtgrim.github.io/2017/08/04/ReactNative一路踩坑之旅/link解决.png">
+<meta property="og:updated_time" content="2017-12-13T07:30:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React Native之旅">
+<meta name="twitter:title" content="重拾React Native之旅">
 <meta name="twitter:description" content="React Native让开发者使用JavaScript和React编写应用，利用相同的核心代码就可以创建基于Web、iOS和Android平台的原生应用。Facebook在2015.3.26 F8大会上开源了React Native，实现了Web和iOS平台，并且在2015.9.15把JavaScript技术应用到了Android平台上，自此React Native已经支持当前主流平台。">
 <meta name="twitter:image" content="https://wtgrim.github.io/2017/08/04/ReactNative一路踩坑之旅/reactNative发布会.png">
 
@@ -133,7 +135,7 @@
 <!-- 网页加载条 -->
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <title>React Native之旅 | GRIM</title>
+  <title>重拾React Native之旅 | GRIM</title>
   
 
 
@@ -307,7 +309,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">React Native之旅</h1>
+          <h1 class="post-title" itemprop="name headline">重拾React Native之旅</h1>
         
 
         <div class="post-meta">
@@ -359,7 +361,7 @@
 
           
           
-             <span id="/2017/08/04/ReactNative一路踩坑之旅/" class="leancloud_visitors" data-flag-title="React Native之旅">
+             <span id="/2017/08/04/ReactNative一路踩坑之旅/" class="leancloud_visitors" data-flag-title="重拾React Native之旅">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -403,6 +405,10 @@
 <p>创建个人项目完成后，可以使用命令号工具执行<code>react-native run-ios</code>或者<code>react-native run-androi</code>运行项目，这里就不再赘述了。</p>
 <h2 id="项目实践"><a href="#项目实践" class="headerlink" title="项目实践"></a>项目实践</h2><p>之前在网上看到有人用React Native仿写了美团App首页，在自己的尝试后也写了一个相应的React Native项目。那个小项目算是我初识React Native。惊叹于React Native的”Learn once, Write anywhere”的同时，也发现里面的东西挺多的，需要一定的前端基础，例如JSX语法、CSS-layout、ES6或ES5编程语言、flexbox布局等等。</p>
 <p>现在因为自己未来的一些个人打算，重拾React Native，希望能够在里面更深层次的探索，同时结合node.js后端的知识，重新写一个项目，从而也提高一下自己的技术栈和技术沉淀。</p>
+<h3 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h3><h4 id="link-react-native-vector-icons-库报错"><a href="#link-react-native-vector-icons-库报错" class="headerlink" title="link  react-native-vector-icons 库报错"></a>link  react-native-vector-icons 库报错</h4><p>ICONS是可以直接使用图片名, 就能加载图片的三方,使用很方便, 你不需要在工程文件夹里塞各种图片, 节省很多空间。但是在加入时遇到第一个坑，安装react-native-vector-icons和rnpm完成后，将react-native-vector-icons链接到项目，使用rnpm link react-native-vector-icons报错，iOS链接失败。</p>
+<p><img src="/2017/08/04/ReactNative一路踩坑之旅/link报错.png" alt="link报错"></p>
+<p>后面没办法，后面找到解决办法就是使用react-native link简单粗暴地解决。</p>
+<p><img src="/2017/08/04/ReactNative一路踩坑之旅/link解决.png" alt="link解决"></p>
 
       
     </div>
@@ -667,7 +673,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于React-Native环境配置"><span class="nav-number">1.</span> <span class="nav-text">关于React Native环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目实践"><span class="nav-number">2.</span> <span class="nav-text">项目实践</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于React-Native环境配置"><span class="nav-number">1.</span> <span class="nav-text">关于React Native环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目实践"><span class="nav-number">2.</span> <span class="nav-text">项目实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化项目"><span class="nav-number">2.1.</span> <span class="nav-text">初始化项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#link-react-native-vector-icons-库报错"><span class="nav-number">2.1.1.</span> <span class="nav-text">link  react-native-vector-icons 库报错</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
