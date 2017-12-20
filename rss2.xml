@@ -8,27 +8,26 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>Wasn&#39;t looking for someone until you.</description>
-    <pubDate>Wed, 13 Dec 2017 07:30:20 GMT</pubDate>
+    <pubDate>Wed, 20 Dec 2017 10:26:13 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>重拾React Native之旅</title>
-      <link>https://wtgrim.github.io/2017/08/04/ReactNative%E4%B8%80%E8%B7%AF%E8%B8%A9%E5%9D%91%E4%B9%8B%E6%97%85/</link>
-      <guid>https://wtgrim.github.io/2017/08/04/ReactNative%E4%B8%80%E8%B7%AF%E8%B8%A9%E5%9D%91%E4%B9%8B%E6%97%85/</guid>
-      <pubDate>Fri, 04 Aug 2017 01:32:54 GMT</pubDate>
+      <title>致敬，一个时代！</title>
+      <link>https://wtgrim.github.io/2017/12/20/%E8%87%B4%E6%95%AC%EF%BC%8C%E4%B8%80%E4%B8%AA%E6%97%B6%E4%BB%A3%EF%BC%81/</link>
+      <guid>https://wtgrim.github.io/2017/12/20/%E8%87%B4%E6%95%AC%EF%BC%8C%E4%B8%80%E4%B8%AA%E6%97%B6%E4%BB%A3%EF%BC%81/</guid>
+      <pubDate>Wed, 20 Dec 2017 10:13:21 GMT</pubDate>
       <description>
       
-        &lt;blockquote&gt;
-&lt;p&gt;React Native让开发者使用JavaScript和React编写应用，利用相同的核心代码就可以创建基于Web、iOS和Android平台的原生应用。Facebook在2015.3.26 F8大会上开源了React Native，实现了Web和iOS平台，并且在2015.9.15把JavaScript技术应用到了Android平台上，自此React Native已经支持当前主流平台。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;/2017/08/04/ReactNative一路踩坑之旅/reactNative发布会.png&quot; alt=&quot;reactNative发布会&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;关于React-Native环境配置&quot;&gt;&lt;a href=&quot;#关于React-Native环境配置&quot; class=&quot;headerlink&quot; title=&quot;关于React Native环境配置&quot;&gt;&lt;/a&gt;关于React Native环境配置&lt;/h2&gt;&lt;p&gt;在这里，我们就不介绍有关React Native环境配置了，可以去&lt;a href=&quot;https://facebook.github.io/react-native/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;React Native官网&lt;/a&gt;得到相应的帮助，或者国内关于&lt;a href=&quot;http://reactnative.cn/docs/0.50/getting-started.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;React Native中文网&lt;/a&gt;查看相关内容，有MacOS、Linux、Windows对应iOS和Android平台的相关配置，相信这些完全能满足你的需求。&lt;/p&gt;
+        
+        
+          &lt;h5 id=&quot;初中时代&quot;&gt;&lt;a href=&quot;#初中时代&quot; class=&quot;headerlink&quot; title=&quot;初中时代&quot;&gt;&lt;/a&gt;初中时代&lt;/h5&gt;&lt;h5 id=&quot;曾经幼稚地学习着他的动作&quot;&gt;&lt;a href=&quot;#曾经幼稚地学习着他的动作&quot; class=&quot;headerlink&quot; 
+        
       
       </description>
       
-      <content:encoded><![CDATA[<blockquote><p>React Native让开发者使用JavaScript和React编写应用，利用相同的核心代码就可以创建基于Web、iOS和Android平台的原生应用。Facebook在2015.3.26 F8大会上开源了React Native，实现了Web和iOS平台，并且在2015.9.15把JavaScript技术应用到了Android平台上，自此React Native已经支持当前主流平台。</p></blockquote><p><img src="/2017/08/04/ReactNative一路踩坑之旅/reactNative发布会.png" alt="reactNative发布会"></p><h2 id="关于React-Native环境配置"><a href="#关于React-Native环境配置" class="headerlink" title="关于React Native环境配置"></a>关于React Native环境配置</h2><p>在这里，我们就不介绍有关React Native环境配置了，可以去<a href="https://facebook.github.io/react-native/" target="_blank" rel="noopener">React Native官网</a>得到相应的帮助，或者国内关于<a href="http://reactnative.cn/docs/0.50/getting-started.html" target="_blank" rel="noopener">React Native中文网</a>查看相关内容，有MacOS、Linux、Windows对应iOS和Android平台的相关配置，相信这些完全能满足你的需求。</p><a id="more"></a><p>PS：<em>init命令默认会创建最新的版本，而目前最新的0.45及以上版本需要下载boost库编译。此库体积庞大，在国内即便翻墙也很难下载成功，导致很多人<strong>无法正常运行iOS项目</strong>，中文网在论坛中提供了这些库的<a href="http://bbs.reactnative.cn/topic/4301/" target="_blank" rel="noopener">国内下载链接</a>。如果你嫌麻烦，又没有对新版本的需求，那么可以暂时创建<code>0.44.3</code>的版本。</em></p><blockquote><p>提示：你可以使用<code>--version</code>参数（注意是<code>两</code>个杠）创建指定版本的项目。例如<code>react-native init MyApp --version 0.44.3</code>。注意版本号必须精确到两个小数点。</p></blockquote><p>创建个人项目完成后，可以使用命令号工具执行<code>react-native run-ios</code>或者<code>react-native run-androi</code>运行项目，这里就不再赘述了。</p><h2 id="项目实践"><a href="#项目实践" class="headerlink" title="项目实践"></a>项目实践</h2><p>之前在网上看到有人用React Native仿写了美团App首页，在自己的尝试后也写了一个相应的React Native项目。那个小项目算是我初识React Native。惊叹于React Native的”Learn once, Write anywhere”的同时，也发现里面的东西挺多的，需要一定的前端基础，例如JSX语法、CSS-layout、ES6或ES5编程语言、flexbox布局等等。</p><p>现在因为自己未来的一些个人打算，重拾React Native，希望能够在里面更深层次的探索，同时结合node.js后端的知识，重新写一个项目，从而也提高一下自己的技术栈和技术沉淀。</p><h3 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h3><h4 id="link-react-native-vector-icons-库报错"><a href="#link-react-native-vector-icons-库报错" class="headerlink" title="link  react-native-vector-icons 库报错"></a>link  react-native-vector-icons 库报错</h4><p>ICONS是可以直接使用图片名, 就能加载图片的三方,使用很方便, 你不需要在工程文件夹里塞各种图片, 节省很多空间。但是在加入时遇到第一个坑，安装react-native-vector-icons和rnpm完成后，将react-native-vector-icons链接到项目，使用rnpm link react-native-vector-icons报错，iOS链接失败。</p><p><img src="/2017/08/04/ReactNative一路踩坑之旅/link报错.png" alt="link报错"></p><p>后面没办法，后面找到解决办法就是使用react-native link简单粗暴地解决。</p><p><img src="/2017/08/04/ReactNative一路踩坑之旅/link解决.png" alt="link解决"></p>]]></content:encoded>
+      <content:encoded><![CDATA[<h5 id="初中时代"><a href="#初中时代" class="headerlink" title="初中时代"></a>初中时代</h5><h5 id="曾经幼稚地学习着他的动作"><a href="#曾经幼稚地学习着他的动作" class="headerlink" title="曾经幼稚地学习着他的动作"></a>曾经幼稚地学习着他的动作</h5><h5 id="以及一份对篮球的偏执热爱"><a href="#以及一份对篮球的偏执热爱" class="headerlink" title="以及一份对篮球的偏执热爱"></a>以及一份对篮球的偏执热爱</h5><h5 id="也暗恋着隔壁班的那个女孩"><a href="#也暗恋着隔壁班的那个女孩" class="headerlink" title="也暗恋着隔壁班的那个女孩"></a>也暗恋着隔壁班的那个女孩</h5><h5 id="渐渐已成过往"><a href="#渐渐已成过往" class="headerlink" title="渐渐已成过往"></a>渐渐已成过往</h5><h5 id="致敬，-一个时代，-曾经的青春！"><a href="#致敬，-一个时代，-曾经的青春！" class="headerlink" title="致敬， 一个时代， 曾经的青春！"></a>致敬， 一个时代， 曾经的青春！</h5><video src="https://vd3.bdstatic.com//mda-hmjcb522vhq06stn//sc//mda-hmjcb522vhq06stn.mp4?auth_key=1513763151-0-0-e99275a926646031fdbbee30ec210895&bcevod_channel=searchbox_feed&pd=bjh&abtest=all" type="video/mp4" controls="controls" width="100%" height="100%"></video>]]></content:encoded>
       
-      <comments>https://wtgrim.github.io/2017/08/04/ReactNative%E4%B8%80%E8%B7%AF%E8%B8%A9%E5%9D%91%E4%B9%8B%E6%97%85/#disqus_thread</comments>
+      <comments>https://wtgrim.github.io/2017/12/20/%E8%87%B4%E6%95%AC%EF%BC%8C%E4%B8%80%E4%B8%AA%E6%97%B6%E4%BB%A3%EF%BC%81/#disqus_thread</comments>
     </item>
     
     <item>
