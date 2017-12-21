@@ -92,7 +92,8 @@
 <meta property="og:image" content="https://wtgrim.github.io/2017/08/04/ReactNative一路踩坑之旅/reactNative发布会.png">
 <meta property="og:image" content="https://wtgrim.github.io/2017/08/04/ReactNative一路踩坑之旅/link报错.png">
 <meta property="og:image" content="https://wtgrim.github.io/2017/08/04/ReactNative一路踩坑之旅/link解决.png">
-<meta property="og:updated_time" content="2017-12-20T11:43:08.000Z">
+<meta property="og:image" content="https://wtgrim.github.io/2017/08/04/ReactNative一路踩坑之旅/Icon万年错误.png">
+<meta property="og:updated_time" content="2017-12-21T08:47:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="重拾React Native之旅">
 <meta name="twitter:description" content="React Native让开发者使用JavaScript和React编写应用，利用相同的核心代码就可以创建基于Web、iOS和Android平台的原生应用。Facebook在2015.3.26 F8大会上开源了React Native，实现了Web和iOS平台，并且在2015.9.15把JavaScript技术应用到了Android平台上，自此React Native已经支持当前主流平台。">
@@ -408,6 +409,14 @@
 <p>后面没办法，后面找到解决办法就是使用react-native link简单粗暴地解决。</p>
 <p><img src="/2017/08/04/ReactNative一路踩坑之旅/link解决.png" alt="link解决"></p>
 <p>不想写了 待更新！😂</p>
+<p>紧接着出现了一个让我想吐的坑，在链接react-native-vector-icons后，使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Icon from &apos;react-native-vector-icons/Ionicons&apos;;</span><br></pre></td></tr></table></figure>
+<p>在需要的地方使用Icon的文字图片</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;Icon</span><br><span class="line">    name:&apos;ios-play&apos;</span><br><span class="line">    size=&#123;28&#125;</span><br><span class="line">    style=&#123;styles.play&#125;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+<p>但是出现了一个万年错误：</p>
+<p><img src="/2017/08/04/ReactNative一路踩坑之旅/Icon万年错误.png" alt="Icon万年错误"></p>
+<p><a href="https://www.npmjs.com/package/react-native-vector-icons" target="_blank" rel="noopener">官网</a>介绍说使用react-native link可能会出现未知错误，所以选择换一个方式，在node_modules中react-native-vector-icons下面的fonts文件夹拷贝到Xcode下面，在Info.plist中加入外部应用字体描述，结果依然走不通。（我真是炸了）</p>
+<p>这个问题真是困扰几天 ，没有解决，只好暂时放弃，RN爬坑之路真是路漫漫其修远兮啊。如果有人看到，麻烦留言告诉我，万分感激。</p>
 
       
     </div>
