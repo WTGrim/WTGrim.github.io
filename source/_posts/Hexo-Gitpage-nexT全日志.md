@@ -1,7 +1,8 @@
 ---
 title: Hexo+Gitpage+NexT全日志
 date: 2017-01-29 14:02:52
-tags: archivies
+tags: Hexo
+categories: Hexo
 comments: true
 ---
 
@@ -9,15 +10,15 @@ comments: true
 
 ## 写在前面
 
-一直在想搭一个自己的Blog，但是就这样拖到了现在，我能说一句是没(tai)时(lan)间(la)吗？断断续续掰呲这个博客有一小段时间了，想起来就弄一下子，今天差不多算是能看了，后面还会加上一些功能。做这个博客算是一个我个人的秘密基地吧，如果有人偶然闯进来的话，也希望我的一些日志对你有些许的帮助。
+>一直想搭一个自己的Blog，但是就这样拖到了现在，我能说一句是没(tai)时(lan)间(la)吗？断断续续掰呲这个博客有一小段时间了，想起来就弄一下，写这篇日志算是一个记录吧。
+>
+>如果你也正在打算做一个自己的博客，碰巧进来看到的话，希望对你有帮助。
+>
+>现在个人博客网站很多采用Hexo + Gitpage + NexT 或者 Jekyll搭建静态网页，然后部署到自己的域名网站上，还有的采用WordPress。我个人比较喜欢现在博客简洁的风格，所以我的博客是采用Hexo来搭建的。
 
 
 
-现在对我做这个博客过程做一些记录，如果对正想搭建自己博客的人有一些帮助的话，那么希望有幸能帮助到你。
-
-现在很多个人博客网站采用Hexo + Gitpage + NexT 或者 Jekyll搭建静态网页，然后部署到自己的域名网站上，还有的采用WordPress。我个人比较喜欢现在博客简洁的风格，所以我的博客是采用Hexo来搭建的。
-
-
+[原文地址](yaoayaoa.cn)
 
 ## 关于Hexo部分
 
@@ -27,7 +28,7 @@ comments: true
 
 对于工具环境，我用的MacBook Pro，但是命令行的差别不大，所以使用Windows来搭建也不必担心。
 
-
+<!-- more -->
 
 ### 注册Github账号
 
@@ -343,9 +344,11 @@ $ hexo g
 $ hexo d
 ```
 
-在浏览器中输入```你的昵称.github.io```即可观察到muse主题效果
+注意：由于部署需要一定时间，所以每次部署等一小段时间才能看到效果（下同）。
 
-![Muse主题界面](/Users/grim/Documents/Work/Fun/Blog2/source/_posts/Hexo-Gitpage-nexT全日志/Muse主题界面.png)
+在浏览器中输入``你的昵称.github.io``即可观察到muse主题效果
+
+![Muse主题界面](Hexo-Gitpage-nexT全日志/Muse主题界面.png)
 
 
 
@@ -359,7 +362,7 @@ $ hexo d
 
 1. 将 [particle.js](https://github.com/Neveryu/Neveryu.github.io/blob/master/js/src/particle.js) 文件添加到 \themes\next\source\js\src 文件目录下。
 
-2. 找到 `\themes\next\layout\_layout.swing` 文件，**在文件的后面，</body>标签之前 **添加以下代码：
+2. 找到 ``\themes\next\layout\_layout.swing`` 文件，**在文件的后面，</body>标签之前 **添加以下代码：
 
    ```
    <!-- 背景动画 -->
@@ -377,7 +380,7 @@ $ hexo d
 终端中cd到博客的根目录下
 
 ```
-
+cd 博客路径
 ```
 
 这样就讲Hexo相关配置上传到了仓库的分支上，那么在另外一台设备上可以这样做
@@ -421,7 +424,7 @@ git push origin 分支名
 
 ## 绑定个人域名
 
-如果觉得现在的```你的昵称.github.io```并不是很炫酷，那么你可以通过购买域名，将自己的Blog部署上去。
+如果觉得现在的``你的昵称.github.io``并不是很炫酷，那么你可以通过购买域名，将自己的Blog部署上去。
 
 可以在阿里云上购买域名[阿里云域名页面](https://wanwang.aliyun.com/?spm=5176.8142029.735711.56.3836dbccCvcics)，推荐.com .cn的域名，价格相应贵一点，可是看起来顺眼啊，什么.xyz
 
@@ -489,6 +492,99 @@ hexo new page "categories"
 
 执行命令完成后，会在themes/source下创建一个名为categories的文件夹，打开里面的index.md文件，
 
-![分类](Hexo-Gitpage-nexT全日志/分类.png)
+![第一篇文章](Hexo-Gitpage-nexT全日志/第一篇文章.png)
 
-在**主题文件**下
+同理，你可以依照上述流程创建，tags（标签）和about（关于）的模块。
+
+
+
+在**主题文件**下，设置menu和相应的图标，关于图标你可以使用[Font Awesome](http://fontawesome.io/icons/)，直接找到相应的名字就可以。
+
+
+
+![分类页面设置](Hexo-Gitpage-nexT全日志/分类页面设置.png)
+
+![分类图标设置](Hexo-Gitpage-nexT全日志/分类图标设置.png)
+
+重新就行部署，你可以发现分类页面、图标相应的变化。
+
+以此类推添加你想要的模块。注意，你可能需要到theme/next/languages中的zh-hans中去配置你需要的文字描述。
+
+
+
+### 添加评论
+
+其实现在最新版的NexT已经集成了很多第三方评论服务。继多说，网易云跟帖相继停止自己的服务外，现在算是挺难找到一个不需要VPN、UI又好看以及集成较多登录方式的评论了，个人觉得Github的Gitment算是比较好的选择，还有一个是来必力，但是需要翻墙，评论速度就不敢恭维了。
+
+这里我提供NexT官方[集成评论](http://theme-next.iissnan.com/third-party-services.html)的网址，集成也比较简单方便，支持DISQUS、来必力（都需要科学上网），按自己的喜好来吧。
+
+主要说一下集成**Gitment**评论：
+
+Gitment是使用的GitHub Issues作为评论系统，在接入Gitment前，需要获得GitHub的授权，获得相应的客户端id和客户端私钥，以备站点使用。
+
+[OAuth application注册接入](http://colabug.com/goto/aHR0cHM6Ly9naXRodWIuY29tL3NldHRpbmdzL2FwcGxpY2F0aW9ucy9uZXc=)
+
+
+
+![Gitment授权](Hexo-Gitpage-nexT全日志/Gitment授权.png)
+
+从而获取到获取Client ID和Client Secret。然后打开**主题配置**文件，进行相应填写后，将enable修改为true，![填写Gitment配置](Hexo-Gitpage-nexT全日志/填写Gitment配置.png)
+
+
+
+
+
+重写部署，就可以看到添加评论后的效果:
+
+
+
+![Gitment](Hexo-Gitpage-nexT全日志/Gitment.png)
+
+### 打赏功能
+
+打赏功能呢，是每个创作者创作动力，请暂且允许我这么说，但是基本不会有人打赏呐。但是可以作为一个技术功能来添加到自己的博客也未尝不可。
+
+NexT支持微信和支付宝二维码打赏的功能，只需要将自己微信和支付宝收款的二维码的图保存下来就可以了（也可以设置对应的金额，就看你的人品会不会有人买单呐），具体操作这里就不做阐述了，实在有问题的话可以自行百度一下。
+
+将保存下来的二维码进行相应命名后放到themes/next/source/images文件夹下，然后配置主题文件如下即可：
+
+![打赏配置](Hexo-Gitpage-nexT全日志/打赏配置.png)
+
+然后重新部署，等一小会儿到自己的博客文章底部可看到效果。
+
+```
+$ hexo clean
+$ hexo g
+$ hexo d
+```
+
+
+
+### 添加RSS
+
+**安装 [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) 插件**
+
+- RSS需要有一个Feed链接，而这个链接需要靠hexo-generator-feed插件来生成，所以第一步需要添加插件，在Hexo根目录执行安装指令：
+
+  ```
+  npm install hexo-generator-feed --save
+  ```
+
+- **配置feed信息**
+  在**站点配置文件**中追加如下图所示的信息：
+
+  ![RSS配置](Hexo-Gitpage-nexT全日志/RSS配置.png)
+
+重新部署后可看到这样的效果:
+
+![RSS](Hexo-Gitpage-nexT全日志/RSS.png)
+
+
+
+
+
+## 写在最后
+
+到此，相信你已经搭建了一个自己简单的博客，后续空闲我会更新如何打造一个更加炫酷的博客，包括文章中引用图片的问题、添加进度条、添加音乐、添加阅读数据统计、添加宠物、文章中添加版权信息、打赏文字不闪动、添加热度、添加文章加密访问等等功能。
+
+休息休息，祝玩得愉快！

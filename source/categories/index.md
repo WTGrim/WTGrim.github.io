@@ -1,6 +1,6 @@
 ---
 title: 分类
 date: 2017-02-28 16:00:55
-categories: "categories"
+type: "categories"
 comments: false
 ---
